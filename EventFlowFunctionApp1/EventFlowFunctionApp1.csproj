@@ -6,7 +6,7 @@
     <PackageReference Include="Microsoft.Diagnostics.EventFlow.Inputs.MicrosoftLogging" Version="1.1.0" />
     <PackageReference Include="Microsoft.Diagnostics.EventFlow.Outputs.StdOutput" Version="1.1.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="1.1.1" />
     <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="1.0.8" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
   </ItemGroup>
