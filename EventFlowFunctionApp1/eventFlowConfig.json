@@ -1,0 +1,19 @@
+﻿{
+  "inputs": [
+    {
+      "type": "Microsoft.Extensions.Logging"
+    }
+  ],
+  "filters": [
+    {
+      "type": "drop",
+      "include": "Level == Verbose"
+    }
+  ],
+  "outputs": [
+    {
+      "type": "StdOutput"
+    }
+  ],
+  "schemaVersion": "2016-08-11"
+}
