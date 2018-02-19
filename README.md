@@ -8,3 +8,10 @@ Run the Azure Function App from Visual Studio to see the behavior.
 *Method not found: 'Microsoft.Extensions.Logging.ILoggerFactory Microsoft.Diagnostics.EventFlow.Inputs.LoggerFactoryExtensions.AddEventFlow(Microsoft.Extensions.Logging.ILoggerFactory, Microsoft.Diagnostics.EventFlow.DiagnosticPipeline)'.*
 - When running from the feature/FixRuntimeError branch, the function runs just fine. Microsoft.Extensions.Logging has been downgraded to 1.1.1 in this branch, while it is 2.0.0 in the master branch.
 - Explicit binding redirect workaround for Azure Functions in feature/ExplicitBindingRedirect. It doesn't solve the issue, and a breakpoint inside the anonymous AssemblyBindingRedirectHelper.RedirectAssembly method doesn't get hit for some reason. Implementation is based on this blog post, and it has helped me with a similar issue in another Azure Function project: https://codopia.wordpress.com/2017/07/21/how-to-fix-the-assembly-binding-redirect-problem-in-azure-functions/
+Also a local.settings.json file must exist with at least this content: 
+```
+"Values": { 
+  "BindingRedirects": "[ { \"ShortName\": \"Microsoft.Extensions.Logging\", \"RedirectToVersion\": \"2.0.0.0\", \"PublicKeyToken\": \"adb9793829ddae60\" } ]" 
+}
+```
+Use ILSpy or somthing similar to find the value for PublicKeyToken.
