@@ -11,6 +11,11 @@ namespace EventFlowFunctionApp1
 {
     public static class Function1
     {
+        static Function1()
+        {
+            ApplicationHelper.Startup();
+        }
+
         [FunctionName("Function1")]
         public static void Run([TimerTrigger("00:00:03")]TimerInfo myTimer, TraceWriter log)
         {
